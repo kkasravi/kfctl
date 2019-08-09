@@ -191,6 +191,9 @@ doc:
 test: build-kfctl
 	go test ./... -v
 
+test-e2e: build-kfctl
+	go test -v ./testing/e2e/...
+
 
 # Run the unittests and output a junit report for use with prow
 test-junit: build-kfctl
