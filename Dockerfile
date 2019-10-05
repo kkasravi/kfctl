@@ -6,7 +6,7 @@ ARG ALPINE_VERSION=3.10.1
 ARG GOLANG_VERSION=1.12.9-alpine3.10
 FROM golang:$GOLANG_VERSION as builder
 
-RUN apk add --no-cache bash build-base git python unzip wget
+RUN apt-get update && apt-get install -y bash git unzip wget jq vim
 
 # junit report is used to conver go test output to junit for reporting
 RUN go get -u github.com/jstemmer/go-junit-report
